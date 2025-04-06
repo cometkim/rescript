@@ -106,17 +106,18 @@ let precedence = function
   | HashEqual | ColonEqual -> 1
   | Lor -> 2
   | Land -> 3
-  | Caret -> 4
-  | Band -> 5
+  | Bar -> 4
+  | Caret -> 5
+  | Band -> 6
   | Equal | EqualEqual | EqualEqualEqual | LessThan | GreaterThan | BangEqual
   | BangEqualEqual | LessEqual | GreaterEqual | BarGreater ->
-    6
-  | LeftShift | RightShift | RightShiftUnsigned -> 7
-  | Plus | PlusDot | Minus | MinusDot | PlusPlus -> 8
-  | Asterisk | AsteriskDot | Forwardslash | ForwardslashDot | Percent -> 9
-  | Exponentiation -> 10
-  | MinusGreater -> 11
-  | Dot -> 12
+    7
+  | LeftShift | RightShift | RightShiftUnsigned -> 8
+  | Plus | PlusDot | Minus | MinusDot | PlusPlus -> 9
+  | Asterisk | AsteriskDot | Forwardslash | ForwardslashDot | Percent -> 10
+  | Exponentiation -> 11
+  | MinusGreater -> 12
+  | Dot -> 13
   | _ -> 0
 
 let to_string = function

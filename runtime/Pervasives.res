@@ -71,6 +71,7 @@ external \"**": ('a, 'a) => 'a = "%pow"
 external \"~~": 'a => 'a = "%bitnot"
 external \"&": ('a, 'a) => 'a = "%bitand"
 external \"^": ('a, 'a) => 'a = "%bitxor"
+external \"|": ('a, 'a) => 'a = "%bitor"
 external \">>": ('a, 'a) => 'a = "%asr"
 external \">>>": ('a, 'a) => 'a = "%lsr"
 

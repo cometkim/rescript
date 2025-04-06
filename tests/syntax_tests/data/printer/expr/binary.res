@@ -53,6 +53,7 @@ let () = (x: int) |> (print_int: int => unit)
 x + y / z
 x / y + z
 x % y * z
+x | y + z
 x ^ y + z
 x & y + z
 x << y + z
