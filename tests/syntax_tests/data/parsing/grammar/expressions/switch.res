@@ -17,6 +17,15 @@ switch (a, b) {
 | _ => 3
 }
 
+// bitwise OR
+switch x {
+| A | B => (a | b)
+| C => {
+    let y = a | b
+  }
+| _ => (a & b | c)
+}
+
 switch person1 {
 | Teacher(_) => () // do nothing
 | Student({reportCard: {gpa}}) if gpa < 0.5 =>
