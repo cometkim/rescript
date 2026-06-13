@@ -509,17 +509,17 @@ module Compile = struct
       (* default *)
       let ast = impl str in
       let ast = Ppx_entry.rewrite_implementation ast in
-      let typed_tree =
-        let a, b, _, signature =
+      let a, b, finalenv =
+        let a, b, finalenv, signature =
           Typemod.type_implementation_more modulename modulename modulename env
             ast
         in
-        (* finalenv := c ; *)
         types_signature := signature;
-        (a, b)
+        (a, b, finalenv)
       in
-      typed_tree |> Translmod.transl_implementation modulename
-      |> (* Printlambda.lambda ppf *) fun (lam, exports) ->
+      let env, lam, exports =
+        Translmod.transl_implementation modulename finalenv (a, b)
+      in
       let buffer = Buffer.create 1000 in
       let () =
         Js_dump_program.pp_deps_program ~output_prefix:""
